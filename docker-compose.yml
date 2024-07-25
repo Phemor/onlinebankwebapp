@@ -1,0 +1,7 @@
+services:
+  myreactapp:
+    restart: unless-stopped
+    image: myreactapp:latest
+    container_name: myreactapp
+    ports:
+      - "5173:5173"
