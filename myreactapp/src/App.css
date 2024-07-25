@@ -1,0 +1,390 @@
+* {
+  box-sizing: border-box;
+}
+
+body, html {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+}
+
+.container {
+  text-align: center;
+}
+
+.nav {
+  background-color: #333;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+  padding: 0 1rem;
+}
+
+.site-title {
+  font-size: 2rem;
+}
+
+.nav ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+}
+
+.nav a {
+  color: inherit;
+  text-decoration: none;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  padding: .25rem;
+}
+
+.nav li:active {
+  background-color: #555;
+}
+
+.nav li:hover {
+  background-color: #777;
+}
+
+.home-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  text-align: center;
+}
+
+.button {
+  background-color: blue;
+  color: black;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.button:hover {
+  background-color: #333;
+  color: white;
+  letter-spacing: 0.25em;
+  box-shadow: 0 0 35px #333;
+}
+
+.login-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: wheat;
+}
+
+.wrapper {
+  width: 420px;
+  background: #333;
+  color: #fff;
+  border-radius: 10px;
+  padding: 30px 40px;
+}
+
+.wrapper h1 {
+  font-size: 36px;
+  text-align: center;
+}
+
+.wrapper .input-box {
+  position: relative;
+  width: 100%;
+  height: 50px;
+  margin: 30px 0;
+}
+
+.input-box input {
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  border: none;
+  outline: none;
+  border: 2px solid rgba(255, 255, 255, .2);
+  border-radius: 40px;
+  font-size: 16px;
+  color: #fff;
+  padding: 20px 45px 20px 20px;
+}
+
+.input-box input::placeholder {
+  color: #888;
+}
+
+.input-box .icon {
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 16px;
+}
+
+/* Floating label animation */
+.input-container {
+  position: relative;
+  margin-bottom: 1.5rem;
+  width: 100%; /* Ensures inputs take full width */
+}
+
+.input-container label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-size: 1rem;
+  color: #888;
+  transform-origin: left top;
+  transition: transform 0.3s, font-size 0.3s, top 0.3s;
+  pointer-events: none;
+}
+
+.input-field {
+  width: 100%; 
+  padding: 0.75rem 0.5rem;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  transition: border-color 0.3s;
+  background-color: transparent;
+}
+
+.input-field:focus {
+  outline: none;
+  border-color: #007bff; /* Adjust focus color as needed */
+}
+
+.input-field:focus + label,
+.input-field:not(:placeholder-shown) + label {
+  transform: translateY(-120%) scale(0.8);
+  top: 0.25rem;
+  font-size: 0.75rem;
+  color: #007bff; /* Adjust label color on focus */
+}
+
+.floating-label {
+  position: absolute;
+  top: 50%;
+  left: 0.5rem;
+  font-size: 1rem;
+  color: #888;
+  transform-origin: left top;
+  transition: transform 0.3s, font-size 0.3s, top 0.3s;
+  pointer-events: none;
+}
+
+.checkbox-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 30px 40px;
+}
+
+.checkbox-container label {
+  font-size: 0.75rem;
+  display: flex;
+  align-items: center;
+  margin-right: auto;
+}
+
+.checkbox-container input[type="checkbox"] {
+  width: auto;
+  height: auto;
+  margin-right: 0.5rem; /* Adds space between the checkbox and the text */
+}
+
+.checkbox-container a {
+  margin-left: auto;
+  font-size: 0.75rem;
+  padding-left: 10px;
+}
+
+.remember-me {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.wrapper button {
+  background-color: blue;
+  color: black;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+  margin: 20px 0 15px;
+}
+
+.wrapper button:hover {
+  background-color: #333;
+  color: white;
+  letter-spacing: 0.25em;
+  box-shadow: 0 0 35px #333;
+}
+
+.wrapper a {
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.wrapper a:hover {
+  text-decoration: underline;
+  color: blue;
+}
+
+.register-wrapper {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background: wheat;
+}
+
+.register-container {
+  position: relative;
+  max-width: 700px;
+  width: 100%;
+  background-color: #333;
+  padding: 25px;
+  border-radius: 8px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+.register-container h1 {
+  font-size: 2rem;
+  color: white;
+  font-weight: 500;
+  text-align: center;
+}
+
+.register-container .register-form {
+  margin-top: 20px;
+}
+
+.register-form .input-box {
+  width: 100%;
+  margin-top: 20px;
+}
+
+.register-form .input-box input,
+.register-form .select-box select {
+  height: 50px;
+  width: 100%;
+  outline: none;
+  font-size: 1rem;
+  color: #707070;
+  margin-top: 8px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 0 15px;
+  background: #f7f7f7;
+}
+
+.register-form .column {
+  display: flex;
+  column-gap: 15px;
+}
+
+.register-form .gender-box {
+  margin-top: 20px;
+}
+
+.gender-box h3 {
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 400;
+  margin-bottom: 8px;
+}
+
+.register-form .gender-option,
+.register-form .gender {
+  display: flex;
+  align-items: center;
+  column-gap: 50px;
+  flex-wrap: wrap;
+}
+
+.gender input{
+  accent-color: blue;
+}
+
+.register-form .gender {
+  column-gap: 5px;
+  cursor: pointer;
+}
+
+.register-form .gender input,
+.register-form .gender label {
+  cursor: pointer;
+} 
+
+.address .select-box {
+  margin-top: 20px;
+}
+
+.address input {
+  margin-top: 20px; 
+}
+
+.address .column {
+  margin-top: 20px; 
+}
+
+.select-box {
+  margin-bottom: 20px;
+  margin-left: 3px; 
+  width: 100%; 
+  height: 50px; 
+  padding: 0.5px;
+  box-sizing: border-box;
+  border-radius: 4px;
+}
+
+.select-box select {
+  height: 100%;
+  width: 100%;
+  outline: none;
+  border: none;
+  color: #333; 
+  font-size: 1rem;
+  background: #f7f7f7;
+  border-radius: 6px;
+  padding: 0 15px;
+}
+
+.register-form .gender-option {
+  row-gap: 15px;
+}
+
+.register-form button {
+  background-color: blue;
+  color: black;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+  margin: 20px 0 15px;
+}
+
+.register-form button:hover {
+  background-color: #333;
+  color: white;
+  letter-spacing: 0.25em;
+  box-shadow: 0 0 35px #333;
+}
