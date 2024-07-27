@@ -3,9 +3,12 @@ import { Link } from 'react-router-dom'
 import '../App.css';
 import { FaUser, FaLock  } from "react-icons/fa";
 import { useNavigate } from 'react-router-dom';
+import BackgroundSlider from '../components/BackgroundSlider';
 
 function Home() {
   return (
+    <div className="home-container">
+      <BackgroundSlider/>
     <div className="login-form">
     <div className="wrapper">
       <form action="">
@@ -20,7 +23,7 @@ function Home() {
           </div>
           <div className="checkbox-container">
           <label><input type="checkbox" />Remember Me</label>
-          <a href="#">Forgot Password?</a>
+          <p><Link to="/forgotpassword">Forgot Password?</Link></p>
           </div>
           <Link to="/welcome">
           <button type="submit">Login</button>
@@ -29,6 +32,7 @@ function Home() {
             <p>Don't Have An Account? <Link to="/register">Register</Link></p>
           </div>
      </form>
+      </div>
       </div>
       </div>
   )

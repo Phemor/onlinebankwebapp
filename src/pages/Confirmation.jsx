@@ -1,4 +1,5 @@
 import {useLocation} from 'react-router-dom'
+import NavigationButtons from '../components/NavigationButtons';
 
 function Confirmation() {
     const location = useLocation()
@@ -7,12 +8,15 @@ function Confirmation() {
 
     return (
         <div>
+            <NavigationButtons/>
+        <div>
             <h1>Payment {success ? 'Successful' : 'Failed'}</h1>
             {success ? (
                 <p>Thank You for Your Payment.</p>
             ) : (
                 <p>There was an error processing your payment. Please try again.</p>
         )}
+        </div>
         </div>
     )
 }

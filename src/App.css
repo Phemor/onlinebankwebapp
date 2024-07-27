@@ -7,7 +7,7 @@ body, html {
   font-family: "Poppins", sans-serif;
 }
 
-.container {
+.appcontainer {
   text-align: center;
 }
 
@@ -50,7 +50,41 @@ body, html {
   background-color: #777;
 }
 
-.home-container {
+.navigation-buttons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+}
+
+.navigation-buttons .back-button {
+  margin-right: auto;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.navigation-buttons .close-button {
+  margin-left: auto;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.navigation-buttons .back-button:hover, 
+.navigation-buttons .close-button:hover {
+  background-color: #0056b3;
+}
+
+.welcomecontainer {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -77,12 +111,22 @@ body, html {
   box-shadow: 0 0 35px #333;
 }
 
+.home-container{
+text-align: center;
+height: 100%;
+
+}
+
 .login-form {
   display: flex;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  background-color: wheat;
+}
+
+.container-style{
+  height: 100%;
+  position: relative;
 }
 
 .wrapper {
@@ -215,6 +259,60 @@ body, html {
   gap: 10px;
 }
 
+.forgot-password-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f0f0f0;
+}
+
+.forgot-password-container {
+  background: #333;
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.forgot-password-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.forgot-password-form h1 {
+  margin-bottom: 20px;
+  font-size: 24px;
+  text-align: center;
+}
+
+.forgot-password-form .input-box {
+  margin-bottom: 20px;
+}
+
+.forgot-password-form input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+.forgot-password-form button {
+  background-color: blue;
+  color: white;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.forgot-password-form button:hover {
+  background-color: #333;
+}
+
+
 .wrapper button {
   background-color: blue;
   color: black;
@@ -322,6 +420,13 @@ body, html {
   accent-color: blue;
 }
 
+.gender-option {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  gap: 20px;
+}
+
 .register-form .gender {
   column-gap: 5px;
   cursor: pointer;
@@ -342,6 +447,10 @@ body, html {
 
 .address .column {
   margin-top: 20px; 
+}
+
+.address input:first-of-type {
+  margin-bottom: 20px;
 }
 
 .select-box {

@@ -9,13 +9,16 @@ import Payment from './pages/Payment.jsx';
 import Confirmation from './pages/Confirmation.jsx';
 import Welcome from './pages/Welcome.jsx';
 import Register from './pages/Register.jsx';
+import ForgotPassword from './pages/ForgotPassword.jsx';
 import { Route, Routes } from 'react-router-dom';
+
 
 function App(){
   return (
   <>
   <Navbar/>
-  <div className="container">
+ 
+  <div className="appcontainer">
     <Routes>
       <Route path="/" element={<Home />} />
       <Route path="/about" element={<About />} />
@@ -25,10 +28,11 @@ function App(){
       <Route path="/confirmation" element={<Confirmation/>} />
       <Route path="/welcome" element={<Welcome/>} />
       <Route path="/register" element={<Register/>} />
+      <Route path="/forgotpassword" element={<ForgotPassword />} />
     </Routes>
   </div>
    </>
-  )
+  );
 }
 
 

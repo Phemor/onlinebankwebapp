@@ -1,8 +1,17 @@
-import React from 'react';
+import React, { useState }from 'react';
 import '../App.css';
+import NavigationButtons from '../components/NavigationButtons';
 
 function Register() {
+  const [selectedSchool, setSelectedSchool] = useState('');
+
+  const handleSchoolChange = (event) => {
+    setSelectedSchool(event.target.value);
+  };
+
   return (
+    <div>
+      <NavigationButtons/>
     <div className="register-wrapper">
       <div className="register-container">
         <form action="#" className="register-form">
@@ -40,24 +49,37 @@ function Register() {
           </div>
           <div className="input-box address">
             <input type="text" placeholder="Enter street address" required />
-            <input type="text" placeholder="Enter your school" required />
             <input type="text" placeholder="Enter your student ID" required />
+            <div className="select-box">
+            <select required onChange={handleSchoolChange}>
+            <option hidden>Select your school</option>
+            <option>Ghana Communication Technology University</option>
+            <option>University of Ghana</option>
+           </select>
+          </div>
+
             <div className="select-container">
               <div className="column">
                 <div className="select-box">
                   <select required>
                     <option hidden>Campus</option>
+                    {selectedSchool === 'University of Ghana' ? (
+                      <>
+                      <option>Legon(main)</option>
+                      <option>City</option>
+                      </>
+                    ):(
+                      <>
                     <option>Abeka</option>
-                    <option>City</option>
                     <option>Ho</option>
                     <option>Koforidua</option>
                     <option>Kumasi</option>
-                    <option>Legon(main)</option>
                     <option>Takoradi</option>
                     <option>Tesano(main)</option>
+                    </>
+                    )}
                   </select>
                 </div>
-                <input type="text" placeholder="Enter your region" required />
               </div>
               <div className="column">
                 <input type="text" placeholder="Enter your city" required />
@@ -74,6 +96,7 @@ function Register() {
           <button type="submit">Register</button>
         </form>
       </div>
+    </div>
     </div>
   );
 }

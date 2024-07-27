@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import '../App.css'; // Import your App.css file
-
+import NavigationButtons from '../components/NavigationButtons';
 function Payment() {
   const [school, setSchool] = useState('');
   const [studentId, setStudentId] = useState('');
@@ -36,6 +36,8 @@ function Payment() {
   };
 
   return (
+    <div>
+      <NavigationButtons/>
     <div>
       <h1>Payment Page</h1>
       <form onSubmit={handlePayment}>
@@ -101,6 +103,7 @@ function Payment() {
         </div>
         <button  className="button">Submit Payment</button>
       </form>
+    </div>
     </div>
   );
 }
