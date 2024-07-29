@@ -8,7 +8,7 @@ import BackgroundSlider from '../components/BackgroundSlider';
 function Home() {
   return (
     <div className="home-container">
-      <BackgroundSlider/>
+    <BackgroundSlider/>
     <div className="login-form">
     <div className="wrapper">
       <form action="">

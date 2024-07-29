@@ -125,8 +125,10 @@ height: 100%;
 }
 
 .container-style{
-  height: 100%;
+  width: 100%;
   position: relative;
+  background: #000;
+  height: 400px;
 }
 
 .wrapper {
