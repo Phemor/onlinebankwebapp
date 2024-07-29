@@ -114,7 +114,6 @@ body, html {
 .home-container{
 text-align: center;
 height: 100%;
-
 }
 
 .login-form {
@@ -311,7 +310,6 @@ height: 100%;
 .forgot-password-form button:hover {
   background-color: #333;
 }
-
 
 .wrapper button {
   background-color: blue;
