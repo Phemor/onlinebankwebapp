@@ -1,24 +1,18 @@
-import {useLocation} from 'react-router-dom'
+import React from 'react';
+import { useLocation, Link } from 'react-router-dom';
+import '../App.css'; // Adjust the path to your CSS file if necessary
 import NavigationButtons from '../components/NavigationButtons';
 
 function Confirmation() {
-    const location = useLocation()
-    const { state } = location
-    const success = state?.success
+  const location = useLocation();
+  const { success, transaction } = location.state || {};
 
-    return (
-        <div>
-            <NavigationButtons/>
-        <div>
-            <h1>Payment {success ? 'Successful' : 'Failed'}</h1>
-            {success ? (
-                <p>Thank You for Your Payment.</p>
-            ) : (
-                <p>There was an error processing your payment. Please try again.</p>
-        )}
-        </div>
-        </div>
-    )
-}
+ 
 
-export default Confirmation
+        <Link to="/welcome">
+          <button className="confirmation-button">Go To Dashboard</button>
+        </Link>
+      
+ }
+ 
+export default Confirmation;

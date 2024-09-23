@@ -12,8 +12,8 @@ function ForgotPassword() {
           <h1>Forgot Password</h1>
           <div className="input-box">
             <input type="email" placeholder="Enter your email" required />
-            <input type="email" placeholder="Enter new password" required />
-            <input type="email" placeholder="Enter confirm new password" required />
+            {/* <input type="email" placeholder="Enter new password" required />
+            <input type="email" placeholder="Enter confirm new password" required />  */}
           </div>
           <button type="submit">Reset Password</button>
         </form>

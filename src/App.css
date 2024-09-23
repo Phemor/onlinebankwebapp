@@ -93,7 +93,7 @@ body, html {
   text-align: center;
 }
 
-.button {
+.welcome-button {
   background-color: blue;
   color: black;
   padding: 12px 24px;
@@ -104,36 +104,190 @@ body, html {
   transition: background-color 0.3s, color 0.3s;
 }
 
-.button:hover {
+.welcome-button:hover {
   background-color: #333;
   color: white;
   letter-spacing: 0.25em;
   box-shadow: 0 0 35px #333;
 }
 
-.home-container{
-text-align: center;
-height: 100%;
-}
-
-.login-form {
+/* Overall layout */
+.page-container {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
+  height: 100vh; /* Full height of the viewport */
+  margin: 0; /* Remove margin between the sidebar and page */
 }
 
-.container-style{
-  height: 100%;
+.welcome-page {
+  display: flex;
+  flex-grow: 1;
+  padding: 20px;
+}
+
+/* Sidebar */
+.sidebar {
+  background-color: grey;
+  color: white;
+  padding-top: 20px;
+  transition: width 0.3s ease;
+  width: 250px;
+  height: 100vh;
+  position: fixed;
+  top: 50px;
+  left: 0;
+}
+
+.sidebar.closed {
+  width: 80px;
+}
+
+.sidebar.open {
+  width: 210px;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0.5rem;
+}
+
+.sidebar ul li {
+  display: flex;
+  align-items: center;
+  padding: 15px;
+  cursor: pointer;
   position: relative;
 }
 
-.wrapper {
-  width: 420px;
-  background: #333;
+.sidebar ul li:hover {
+  background-color: #555;
+}
+
+.sidebar ul li svg {
+  margin-right: 15px;
+}
+
+.sidebar ul li .icon-text {
+  display: inline-block;
+  font-size: 1.1rem;
+  transition: opacity 0.3s ease, width 0.3s ease;
+}
+
+.sidebar.closed ul li .icon-text {
+  opacity: 0; /* Hide the text when the sidebar is collapsed */
+  width: 0;
+  overflow: hidden; /* Hide the overflow of text when sidebar is collapsed */
+  display: inline-block;
+}
+
+.sidebar ul li:hover .icon-text {
+  opacity: 1;
+  width: auto;
+  position: absolute; /* Show tooltip text outside the collapsed sidebar */
+  left: 70px; /* Adjust positioning based on the sidebar width */
+  background-color: #333;
   color: #fff;
+  padding: 5px 10px;
+  border-radius: 5px;
+  white-space: nowrap;
+  z-index: 1000;
+}
+
+
+/* Toggle Button */
+.toggle-btn {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.5rem;
+  padding: 10px;
+  cursor: pointer;
+  width: 100%;
+  text-align: left;
+}
+
+/* Main Content */
+.content {
+  flex-grow: 1;
+  padding: 40px;
+  margin-left: 250px; /* Space for the expanded sidebar */
+  transition: margin-left 0.3s ease;
+}
+
+.content.sidebar-closed {
+  margin-left: 80px; /* Adjust space when the sidebar is collapsed */
+}
+
+
+.welcome-header h1 {
+  font-size: 2.5rem;
+  color: #333;
+}
+
+.welcome-content {
+  margin-top: 20px;
+}
+
+.welcome-content p {
+  font-size: 1.2rem;
+  color: #666;
+  margin-bottom: 20px;
+}
+
+.proceed-btn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.proceed-btn:hover {
+  background-color: #45a049;
+}
+
+
+
+.home-container {
+  position: relative;
+  text-align: center;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f0f0f0; /* Ensure there is a default background */
+}
+
+.login-form {
+  position: absolute;
+  z-index: 2; /* Ensure the login form stays on top of the slider */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(51, 51, 51, 0.85); /* Darker background with higher transparency */
   border-radius: 10px;
   padding: 30px 40px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  width: 100%;
+  max-width: 400px; /* Ensure the form is not too wide */
+}
+
+.homecontainer-style {
+  width: 100%;
+  position: absolute; /* Change to absolute to control its position better */
+  top: 0; /* Move the image slider up */
+  left: 0;
+  right: 0;
+  height: 100vh; /* Ensure it covers the full height */
+  z-index: 1; /* Ensure the slider is below the login form */
+}
+
+
+.wrapper {
+  width: 100%;
+  color: #fff;
 }
 
 .wrapper h1 {
@@ -148,89 +302,88 @@ height: 100%;
   margin: 30px 0;
 }
 
-.input-box input {
-  width: 100%;
-  height: 100%;
-  background: transparent;
-  border: none;
-  outline: none;
-  border: 2px solid rgba(255, 255, 255, .2);
-  border-radius: 40px;
-  font-size: 16px;
-  color: #fff;
-  padding: 20px 45px 20px 20px;
+.input-box {
+  position: relative;
+  margin-bottom: 20px;
 }
 
-.input-box input::placeholder {
-  color: #888;
+.input-field{
+  margin-bottom: 2rem;
+}
+
+.input-box input,
+.input-box select {
+  width: 100%;
+  padding: 1rem 0.5rem;
+  font-size: 1rem;
+  border: 2px solid rgba(255, 255, 255, .2);
+  border-radius: 10px; /* Smaller border radius for a more professional look */
+  background-color: #f9f9f9; /* Light background color for better readability */
+  color: #333; /* Darker color for better readability */
+}
+
+.input-box input::placeholder,
+.input-box select::placeholder {
+  color: #888; /* Placeholder color */
 }
 
 .input-box .icon {
   position: absolute;
-  right: 20px;
+  right: 15px;
   top: 50%;
   transform: translateY(-50%);
   font-size: 16px;
+  color: #333; /* Darker icon color */
 }
 
-/* Floating label animation */
-.input-container {
-  position: relative;
-  margin-bottom: 1.5rem;
-  width: 100%; /* Ensures inputs take full width */
-}
-
-.input-container label {
-  position: absolute;
-  top: 0;
-  left: 0;
-  font-size: 1rem;
-  color: #888;
-  transform-origin: left top;
-  transition: transform 0.3s, font-size 0.3s, top 0.3s;
-  pointer-events: none;
-}
-
-.input-field {
-  width: 100%; 
-  padding: 0.75rem 0.5rem;
-  font-size: 1rem;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  transition: border-color 0.3s;
-  background-color: transparent;
-}
-
-.input-field:focus {
+.input-box input:focus,
+.input-box select:focus {
   outline: none;
   border-color: #007bff; /* Adjust focus color as needed */
 }
 
-.input-field:focus + label,
-.input-field:not(:placeholder-shown) + label {
-  transform: translateY(-120%) scale(0.8);
-  top: 0.25rem;
-  font-size: 0.75rem;
-  color: #007bff; /* Adjust label color on focus */
+/* Additional standardized styles for a bank system */
+.payment-container {
+  max-width: 500px; /* Set a maximum width for the form container */
+  margin: 0 auto; /* Center the form container */
+  padding: 2rem;
+  background-color: rgb(255, 255, 255, 0.8);
+  border-radius: 10px; /* Rounded corners for the form container */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for a professional look */
 }
 
-.floating-label {
-  position: absolute;
-  top: 50%;
-  left: 0.5rem;
-  font-size: 1rem;
-  color: #888;
-  transform-origin: left top;
-  transition: transform 0.3s, font-size 0.3s, top 0.3s;
-  pointer-events: none;
+.payment-container h1 {
+  text-align: center;
+  margin-bottom: 2rem;
+  color: #333;
 }
+
+.payment-container button {
+  background-color: blue;
+  color: black;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+  margin: 20px 0 15px;
+}
+
+.payment-container button:hover {
+  background-color: #333;
+  color: white;
+  letter-spacing: 0.25em;
+  box-shadow: 0 0 35px #333;
+}
+
 
 .checkbox-container {
   display: flex;
   align-items: center;
   justify-content: space-between;
   width: 100%;
-  padding: 30px 40px;
+  padding: 10px 0;
 }
 
 .checkbox-container label {
@@ -263,14 +416,17 @@ height: 100%;
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background-color: #f0f0f0;
+  max-width: 700px; /* Set a maximum width for the form container */
+  margin: 0 auto; /* Center the form container */
+  padding: 0;
+  border-radius: 10px; /* Rounded corners for the form container */
+  
 }
 
 .forgot-password-container {
-  background: #333;
-  padding: 40px;
+  background: rgba(51, 51, 51, 0.85);
+  padding: 80px;
   border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 .forgot-password-form {
@@ -289,11 +445,12 @@ height: 100%;
 }
 
 .forgot-password-form input {
-  width: 100%;
+  width: 130%;
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 5px;
   box-sizing: border-box;
+  margin-left: -15%;
 }
 
 .forgot-password-form button {
@@ -313,7 +470,7 @@ height: 100%;
 
 .wrapper button {
   background-color: blue;
-  color: black;
+  color: white;
   padding: 12px 24px;
   border: none;
   border-radius: 5px;
@@ -347,21 +504,21 @@ height: 100%;
   align-items: center;
   justify-content: center;
   padding: 20px;
-  background: wheat;
+  background: white;
 }
-
+ 
 .register-container {
   position: relative;
-  max-width: 700px;
+  max-width: 500px;
   width: 100%;
-  background-color: #333;
+  background: rgba(51, 51, 51, 0.85);
   padding: 25px;
   border-radius: 8px;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
 }
 
 .register-container h1 {
-  font-size: 2rem;
+  font-size: 1.8rem;
   color: white;
   font-weight: 500;
   text-align: center;
@@ -376,9 +533,10 @@ height: 100%;
   margin-top: 20px;
 }
 
+
 .register-form .input-box input,
 .register-form .select-box select {
-  height: 50px;
+  height: 45px;
   width: 100%;
   outline: none;
   font-size: 1rem;
@@ -386,9 +544,10 @@ height: 100%;
   margin-top: 8px;
   border: 1px solid #ddd;
   border-radius: 6px;
-  padding: 0 15px;
+  padding: 0 20px;
   background: #f7f7f7;
 }
+
 
 .register-form .column {
   display: flex;
@@ -412,6 +571,7 @@ height: 100%;
   align-items: center;
   column-gap: 50px;
   flex-wrap: wrap;
+  color:#f0f0f0;
 }
 
 .gender input{
@@ -435,21 +595,6 @@ height: 100%;
   cursor: pointer;
 } 
 
-.address .select-box {
-  margin-top: 20px;
-}
-
-.address input {
-  margin-top: 20px; 
-}
-
-.address .column {
-  margin-top: 20px; 
-}
-
-.address input:first-of-type {
-  margin-bottom: 20px;
-}
 
 .select-box {
   margin-bottom: 20px;
@@ -494,4 +639,86 @@ height: 100%;
   color: white;
   letter-spacing: 0.25em;
   box-shadow: 0 0 35px #333;
+}
+
+.confirmation-container {
+  padding: 20px;
+  background-color: #f4f4f4;
+}
+
+.confirmation-content {
+  max-width: 600px;
+  margin: 0 auto;
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  position: relative; /* Add this to position the print button correctly */
+}
+
+.success-header {
+  color: green;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.receipt {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 15px;
+  background-color: #fff;
+  margin-bottom: 20px;
+  max-width: 450px;
+}
+
+.receipt p {
+  margin: 8px 0;
+  font-size: 16px;
+}
+
+.confirmation-button {
+  background-color: blue;
+  color: white;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+  display: block;
+  margin: 0 auto;
+}
+
+.confirmation-button:hover {
+  background-color: #333;
+  color: white;
+  letter-spacing: 0.25em;
+  box-shadow: 0 0 35px #333;
+}
+
+.print-button {
+  background-color: #007BFF;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-bottom: 20px; /* Space between button and receipt */
+  display: block;
+  margin: 20px auto; /* Center the button horizontally */
+}
+
+.print-button:hover {
+  background-color: #0056b3;
+}
+
+
+@media (max-width: 768px) {
+  .sidebar {
+    flex: 0 0 200px; /* Adjust sidebar width for smaller screens */
+  }
 }
