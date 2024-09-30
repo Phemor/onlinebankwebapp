@@ -1,8 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 * {
   box-sizing: border-box;
 }
 
-body, html {
+body,
+html {
   margin: 0;
   font-family: "Poppins", sans-serif;
 }
@@ -79,7 +84,7 @@ body, html {
   font-size: 16px;
 }
 
-.navigation-buttons .back-button:hover, 
+.navigation-buttons .back-button:hover,
 .navigation-buttons .close-button:hover {
   background-color: #0056b3;
 }
@@ -94,21 +99,28 @@ body, html {
 }
 
 .welcome-button {
-  background-color: blue;
+  background-color: rgb(219, 234, 254);
   color: black;
   padding: 12px 24px;
   border: none;
   border-radius: 5px;
   font-size: 16px;
   cursor: pointer;
-  transition: background-color 0.3s, color 0.3s;
+  font-weight: bold;
+  transition: all 350ms ease;
+  -webkit-transition: all 350ms ease;
+  -moz-transition: all 350ms ease;
+  -ms-transition: all 350ms ease;
+  -o-transition: all 350ms ease;
 }
 
 .welcome-button:hover {
-  background-color: #333;
-  color: white;
-  letter-spacing: 0.25em;
-  box-shadow: 0 0 35px #333;
+  background-color: rgb(166, 202, 248);
+  transform: scale(1.1);
+  -webkit-transform: scale(1.1);
+  -moz-transform: scale(1.1);
+  -ms-transform: scale(1.1);
+  -o-transform: scale(1.1);
 }
 
 /* Overall layout */
@@ -192,7 +204,6 @@ body, html {
   z-index: 1000;
 }
 
-
 /* Toggle Button */
 .toggle-btn {
   background: none;
@@ -207,16 +218,12 @@ body, html {
 
 /* Main Content */
 .content {
-  flex-grow: 1;
   padding: 40px;
-  margin-left: 250px; /* Space for the expanded sidebar */
-  transition: margin-left 0.3s ease;
 }
 
 .content.sidebar-closed {
   margin-left: 80px; /* Adjust space when the sidebar is collapsed */
 }
-
 
 .welcome-header h1 {
   font-size: 2.5rem;
@@ -234,7 +241,7 @@ body, html {
 }
 
 .proceed-btn {
-  background-color: #4CAF50;
+  background-color: #4caf50;
   color: white;
   padding: 10px 20px;
   border: none;
@@ -247,8 +254,6 @@ body, html {
 .proceed-btn:hover {
   background-color: #45a049;
 }
-
-
 
 .home-container {
   position: relative;
@@ -266,7 +271,12 @@ body, html {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background: rgba(51, 51, 51, 0.85); /* Darker background with higher transparency */
+  background: rgba(
+    51,
+    51,
+    51,
+    0.85
+  ); /* Darker background with higher transparency */
   border-radius: 10px;
   padding: 30px 40px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -283,7 +293,6 @@ body, html {
   height: 100vh; /* Ensure it covers the full height */
   z-index: 1; /* Ensure the slider is below the login form */
 }
-
 
 .wrapper {
   width: 100%;
@@ -307,7 +316,7 @@ body, html {
   margin-bottom: 20px;
 }
 
-.input-field{
+.input-field {
   margin-bottom: 2rem;
 }
 
@@ -358,26 +367,6 @@ body, html {
   color: #333;
 }
 
-.payment-container button {
-  background-color: blue;
-  color: black;
-  padding: 12px 24px;
-  border: none;
-  border-radius: 5px;
-  font-size: 16px;
-  cursor: pointer;
-  transition: background-color 0.3s, color 0.3s;
-  margin: 20px 0 15px;
-}
-
-.payment-container button:hover {
-  background-color: #333;
-  color: white;
-  letter-spacing: 0.25em;
-  box-shadow: 0 0 35px #333;
-}
-
-
 .checkbox-container {
   display: flex;
   align-items: center;
@@ -420,7 +409,6 @@ body, html {
   margin: 0 auto; /* Center the form container */
   padding: 0;
   border-radius: 10px; /* Rounded corners for the form container */
-  
 }
 
 .forgot-password-container {
@@ -506,7 +494,7 @@ body, html {
   padding: 20px;
   background: white;
 }
- 
+
 .register-container {
   position: relative;
   max-width: 500px;
@@ -533,7 +521,6 @@ body, html {
   margin-top: 20px;
 }
 
-
 .register-form .input-box input,
 .register-form .select-box select {
   height: 45px;
@@ -547,7 +534,6 @@ body, html {
   padding: 0 20px;
   background: #f7f7f7;
 }
-
 
 .register-form .column {
   display: flex;
@@ -571,10 +557,10 @@ body, html {
   align-items: center;
   column-gap: 50px;
   flex-wrap: wrap;
-  color:#f0f0f0;
+  color: #f0f0f0;
 }
 
-.gender input{
+.gender input {
   accent-color: blue;
 }
 
@@ -593,14 +579,13 @@ body, html {
 .register-form .gender input,
 .register-form .gender label {
   cursor: pointer;
-} 
-
+}
 
 .select-box {
   margin-bottom: 20px;
-  margin-left: 3px; 
-  width: 100%; 
-  height: 50px; 
+  margin-left: 3px;
+  width: 100%;
+  height: 50px;
   padding: 0.5px;
   box-sizing: border-box;
   border-radius: 4px;
@@ -611,7 +596,7 @@ body, html {
   width: 100%;
   outline: none;
   border: none;
-  color: #333; 
+  color: #333;
   font-size: 1rem;
   background: #f7f7f7;
   border-radius: 6px;
@@ -652,7 +637,7 @@ body, html {
   background: white;
   padding: 20px;
   border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   position: relative; /* Add this to position the print button correctly */
 }
 
@@ -700,7 +685,7 @@ body, html {
 }
 
 .print-button {
-  background-color: #007BFF;
+  background-color: #007bff;
   color: white;
   padding: 10px 20px;
   border: none;
@@ -716,9 +701,127 @@ body, html {
   background-color: #0056b3;
 }
 
+.con {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.contact-box {
+  width: 100px;
+  height: 80px;
+  background-color: white;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Approximate shadow for "shadow-contactBox" */
+  border-radius: 12px; /* "rounded-xl" translates to 12px border radius */
+  display: grid;
+  place-content: center;
+}
+
+.form__group {
+  position: relative;
+  padding: 15px 0 0;
+  margin: 10px 0;
+  width: 80%;
+}
+
+.form__field {
+  width: 100%;
+  border: 0;
+  border-bottom: 2px solid #9b9b9b;
+  outline: 0;
+  padding: 7px 0;
+  background: transparent;
+  transition: border-color 0.2s;
+  font-weight: 400;
+  color: #9b9b9b;
+}
+
+.form__field::placeholder {
+  color: transparent;
+}
+
+.form__field:placeholder-shown ~ .form__label {
+  font-size: 1rem;
+  cursor: text;
+  top: 20px;
+}
+
+.form__label {
+  position: absolute;
+  top: 0;
+  display: block;
+  transition: 0.2s;
+  font-size: 0.8rem;
+  color: #9b9b9b;
+  font-weight: 300;
+}
+
+.form__field:focus {
+  padding: 6px 0;
+  border-bottom: 2px solid #8f8ae5d4;
+  margin-top: 0.3em;
+  color: black;
+}
+
+.form__field:focus ~ .form__label {
+  position: absolute;
+  top: 0;
+  display: block;
+  transition: 0.2s;
+  font-size: 1rem;
+  color: #8f8ae5d4;
+  font-weight: 700;
+}
+
+/* reset input */
+.form__field:required,
+.form__field:invalid {
+  box-shadow: none;
+}
+
+#message {
+  resize: none;
+}
+
+.form-submit-btn {
+  width: 100px;
+  height: 40px;
+  border: none;
+  background: #eff2f9;
+  color: var(--header-color);
+  font-weight: 700;
+  cursor: pointer;
+  margin: 2em 1em 0 0;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+  box-shadow: 7px 7px 10px #e3e6ed, -7px -7px 10px #fbfeff;
+}
+
+.form-submit-btn:hover {
+  box-shadow: inset 7px 7px 10px #e3e6ed, inset -7px -7px 10px #fbfeff;
+}
 
 @media (max-width: 768px) {
   .sidebar {
     flex: 0 0 200px; /* Adjust sidebar width for smaller screens */
+  }
+}
+
+@media screen and (max-width: 850px) {
+  .con {
+    margin: 3em 0;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .contact-box {
+    @apply flex justify-center items-center w-[30%];
+  }
+
+  .instagram-svg,
+  .whatsapp-svg {
+    width: 50%;
   }
 }

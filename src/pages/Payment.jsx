@@ -108,7 +108,8 @@ function Payment() {
             />
           </div>
           
-          <button type="submit" className="button">Submit Payment</button>
+          <button type="submit" className="welcome-button">Submit Payment</button>
+         
         </form>
       </div>
     </div>
